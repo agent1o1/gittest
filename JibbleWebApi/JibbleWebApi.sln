@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JibbleWebApi", "JibbleWebApi\JibbleWebApi.csproj", "{3757299D-B674-4CA2-A845-AA92AB0D1172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{A789174D-E290-4F11-B950-122521922E08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3757299D-B674-4CA2-A845-AA92AB0D1172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3757299D-B674-4CA2-A845-AA92AB0D1172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3757299D-B674-4CA2-A845-AA92AB0D1172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3757299D-B674-4CA2-A845-AA92AB0D1172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A789174D-E290-4F11-B950-122521922E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A789174D-E290-4F11-B950-122521922E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A789174D-E290-4F11-B950-122521922E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A789174D-E290-4F11-B950-122521922E08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7198FB5-E42B-400F-A3D9-5793CB904AE1}
+	EndGlobalSection
+EndGlobal
