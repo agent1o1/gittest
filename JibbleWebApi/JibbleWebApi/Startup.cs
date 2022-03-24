@@ -27,6 +27,7 @@ namespace JibbleWebApi
         {
             services.Configure<AuthenticationOptions>(Configuration.GetSection("AuthenticationOptions"));
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IAuthenticationService, AuthenticationService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -34,7 +35,7 @@ namespace JibbleWebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JibbleWebApi", Version = "v1" });
             });
 
-            var authOptions = Configuration.GetSection(nameof(AuthenticationOptions)) as AuthenticationOptions;
+            var authOptions = Configuration.GetSection(nameof(AuthenticationOptions)).Get<AuthenticationOptions>();
             services.AddDbContext<MoviesContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("MoviesContext")));
 
@@ -49,7 +50,7 @@ namespace JibbleWebApi
                             ValidateAudience = true,
                             ValidAudience = authOptions.Audience,
                             ValidateLifetime = true,
-                            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(authOptions.Secret)),                          
+                            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(authOptions.Secret)),
                             ValidateIssuerSigningKey = true,
                         };
                     });
@@ -66,8 +67,8 @@ namespace JibbleWebApi
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
