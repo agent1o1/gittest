@@ -1,6 +1,5 @@
 ﻿using Data.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace Data
 {
@@ -12,5 +11,11 @@ namespace Data
         public DbSet<Favorites> Favorites { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Favorites>(e => e.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId));
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
